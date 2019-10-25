@@ -1,0 +1,69 @@
+/* Variables */
+$circle_diameter: 400px;
+$circle_radius: $circle_diameter/2;
+
+$number_of_circles: 8;
+$normalize_rotation: -90deg + -45deg;
+$rotate: 360deg/$number_of_circles;
+$rotate_reverse:   (360deg/$number_of_circles);
+
+$small_circle: 100px;
+/* layout colour */
+//brown bg, green text
+$bg_1: #544A53;
+$bg1_col1:rgb(91, 81, 89);
+$bg1_col2: rgb(97, 86, 97);
+$color1:rgb(175, 206, 192);
+$color1_head:rgb(170, 186, 177);
+
+//greenish blue bg, black text
+$bg_2:#BCD2D0;
+$bg2_col1:rgb(196, 216, 215);
+$bg2_col2:rgb(202, 220, 220);
+$color2:rgb(42, 47, 51);
+$color2_head:rgb(51, 59, 61);
+
+//light blue bg, dark blue text
+$bg_3:#DEE5F7;
+$bg3_col1:rgb(235, 239, 250);
+$bg3_col2:rgb(242, 245, 252);
+$color3:rgb(3, 94, 188);
+$color3_head:rgb(30, 102, 179);
+
+//black bg, yellow text
+$bg_4:#343B4B;
+$bg4_col1:rgb(58, 67, 84);
+$bg4_col2:rgb(63, 71, 90);
+// $color4:rgb(218, 184, 108);
+$color4: rgb(219, 155, 15);
+$color4_head:rgb(204, 187, 128);
+
+/* general colors */
+// $color-orange: #FF5A37;
+$color_orange:      rgb(255, 90, 55);
+$color_black:       rgb(40, 40, 46);
+$color_black_light: rgb(30, 24, 27);
+$color_purple_dark:rgb(43, 24, 45);
+$color_blue:        rgb(15, 146, 185);
+$color_blue_dark:   rgb(53, 66, 74);
+$color_red:         rgb(189, 0, 42);
+/* form */
+$color_red_dark:    rgb(76, 0, 0);
+$color_white_red:   rgb(201, 178, 178);
+$color_white_dark: rgb(207, 207, 207); //#CFCFCF
+
+// fonts
+$font_color_blue: #003366;
+$font_color_red: #660000;
+
+
+// special colours
+//Singapore
+$singapore_national_colour:rgb(237, 41, 57);
+
+h1, h2, h3 ,h4, p, a , li{
+    // font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    // font-family: 'Adamina', serif;
+    // color: black;
+}

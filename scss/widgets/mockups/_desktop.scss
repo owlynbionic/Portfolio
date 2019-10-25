@@ -1,0 +1,61 @@
+/* apple monitor mockup */
+.container-desktop {
+    position: relative;
+    // transform: translateY(-150%);
+    z-index: 1;
+
+}
+.monitor {
+    width: 350px;
+    height: 200px;
+
+    background: #000;
+    border-bottom: 30px solid #d8d8d8;
+    border-radius: 10px;
+}
+.monitor:before {
+    content: '';
+    width: 70px;
+    height: 60px;
+    background: #bdbdbd;
+    position: absolute;
+    left: 50%;
+    bottom: -35px;
+    transform: perspective(100px) translateX(-50%) rotateX(25deg) skew(7deg);
+    z-index: -1;
+    transform-origin: bottom;
+}
+.monitor:after {
+    content: '';
+    width: 140px;
+    height: 15px;
+    background: #d8d8d8;
+    position: absolute;
+    left: 50%;
+    bottom: -50px;
+    transform: translateX(-50%);
+    z-index: -1;
+    transform-origin: bottom;
+}
+.monitor img {
+    position: absolute;
+    left: 50%;
+    bottom: -67%;
+    transform: translateX(-50%) scale(0.04);
+}
+.overlay-monitor {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.overlay-monitor:before {
+    content: '';
+    position: absolute;
+    left: -30px;
+    width: 60%;
+    height: 100%;
+    background: rgba(255,255,255,.3);
+    transform: skewX(-5deg);
+}

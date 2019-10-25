@@ -1,0 +1,32 @@
+/* ======================
+    layer 1 - Home, clock
+   ======================
+*/
+.layer.one {
+    /* position: relative;
+    height: 100vh; */
+    background-image: url("../../MistyScaryCornsnake_Trim.gif");
+    background-size: cover;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+#date-output {
+    text-align: center;
+    display: block;
+  }
+  
+  #weather {
+    display: block;
+    color: #FFFFFF;
+    width: 60%;
+    max-width: 200px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 15px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    font-size: 1.3em;
+  }

@@ -1,0 +1,234 @@
+@charset "utf-8";
+
+/* CSS Document */
+
+/* SVG BG effect */
+body {
+    margin: 0;
+    padding: 0;
+}
+section.sec1 {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    /* background: #ff319c url("../images/bakery-wallpaper_1280.jpg"); */
+    background-image: url("../images/bakery-wallpaper_1280.jpg");
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+}
+
+section.sec1.home {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    /* background: #ff319c url("../images/bakery-wallpaper_1280.jpg"); */
+    background-image: url("../images/istockphoto-164444132-1024x1024.jpg");
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+}
+
+section.sec1.about {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    /* background: #ff319c url("../images/bakery-wallpaper_1280.jpg"); */
+    background-image: url("../images/about-join-us.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+}
+
+#curve {
+    position: absolute;
+    bottom: 0;
+    
+    width: 100%;
+    /* height: 100%; */
+}
+
+#curve path {
+    fill: rgb(255, 244, 229);
+    /* fill: #ff0; */
+}
+
+/* section.sec2{
+    width: 100%;
+    height: 100h;
+    background: #ff0;
+} */
+/*--------------------------------------------------------------
+ Reset
+--------------------------------------------------------------*/
+
+*,
+ ::after,
+ ::before {
+    box-sizing: border-box
+}
+
+
+/* Responsive Images Reset */
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+/*--------------------------------------------------------------
+ Container Styles
+--------------------------------------------------------------*/
+
+.container {
+    /* background-color: white; */
+    /* background-color: #F5EFDF; */
+    background-color: rgb(255, 244, 229);
+    position: relative;
+    width: 100%;
+    max-width: 1264px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+
+
+
+
+/*--------------------------------------------------------------
+ Grid Styles
+--------------------------------------------------------------*/
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+/* Grid Column Widths */
+
+.one-half {
+    width: 48%;
+}
+
+.one-third {
+    width: 30.6666666667%;
+}
+
+
+/*--------------------------------------------------------------
+ process styles
+--------------------------------------------------------------*/
+
+.process {
+    padding: 30px;
+}
+
+.process>h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.process article h1 {
+    text-align: center;
+}
+
+
+
+/* Media Queries */
+
+@media screen and (max-width: 900px) {
+    /* responsive navigation */
+    .btn-menu {
+        display: block;
+        background-color: transparent;
+        border: none;
+        font-size: 1.3rem;
+        color: white;
+        text-transform: uppercase;
+        line-height: 90px;
+    }
+    .btn-menu:focus {
+        outline: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    header .navbar {
+        display: none;
+        width: 100%;
+        clear: both;
+        background-color: #FF4C2E;
+    }
+    header .navbar ul {
+        display: block;
+    }
+    header .navbarnav li {
+        width: 100%;
+    }
+    header .navbar a {
+        display: block;
+        line-height: 40px;
+        text-align: center;
+    }
+    .show header {
+        height: auto;
+    }
+    .show header .navbar {
+        display: block;
+    }
+    /* top banner */
+    .top-banner {
+        padding: 10vw 0;
+    }
+    .top-banner h2 {
+        font-size: 7vw;
+    }
+    .top-banner p {
+        font-size: 3.5vw;
+    }
+    .mid-banner h2 {
+        font-size: 7vw;
+    }
+    .bottom-banner {
+        padding: 30px;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    header {
+        height: 70px;
+    }
+    header h1 a {
+        line-height: 70px;
+        font-size: 2.5rem;
+    }
+    .btn-menu {
+        line-height: 70px;
+        font-size: 1.2rem;
+    }
+    /* Make Grid Columns 
+	   Single Columns on Mobile */
+    .one-half,
+    .one-third {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    section {
+        padding: 20px;
+    }
+    header .container {
+        padding: 0 20px;
+    }
+    footer {
+        padding: 20px;
+    }
+}

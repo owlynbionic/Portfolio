@@ -1,0 +1,320 @@
+    /*	==========================================
+         Interactive Widgets - circle landing 
+        ========================================== */
+
+        .circle_center_container{
+            position: absolute;
+            display: block;
+            
+          }
+        
+        .circle_outer_container {
+          position: sticky;
+          top: 100px;
+          padding-bottom: -100px;
+          // background-color: black;
+        }
+        
+        .circle_container {
+          width: $circle_diameter;
+          height: $circle_diameter;
+          border-radius: 50%;
+          position: relative;  
+          // background-color: transparent;
+          background-image: url("../images/profile.png");
+          background-repeat: no-repeat;
+          background-size: cover;
+          border:5px solid $color_orange;
+          margin: 100px auto;
+        }
+        
+        .circle_container  > *{
+          display: block;
+          position: absolute;
+          top:50%;
+          left:50%; 
+          // width: $small_circle;
+          // height: $small_circle;
+          margin: -$small_circle/2;
+          border-radius: 50%;
+          background-color: transparent;
+          }
+          .circle {
+            // border: 2px solid #eee;
+            width: $small_circle;
+            height: $small_circle;
+          }
+          .circle_container > .circle:hover {
+            border: 5px solid $color_orange;
+            }
+        
+        .circle_container img {
+            border-radius: 50%;
+            display: block;
+            width: 90px;
+            height: 90px;
+            position: absolute;
+            filter: grayscale(100%); 
+            // opacity: 0.5;
+            top:50%;
+            left:50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .circle_container img:hover {
+          background: #000;
+          filter: grayscale(0%); 
+          // opacity: 1;
+          }
+          
+        // problem: circles translate starts at right side
+        .circle_container  > *:nth-of-type(1) {
+          // top: 0;
+          // left: 50%;
+          transform: rotate($rotate*0) translateY(-$circle_radius) rotate(-$rotate*0);
+          border-radius: 50%;
+        }
+        
+        .circle_container  > *:nth-of-type(2) {
+          transform: rotate($rotate*1) translateY(-$circle_radius) rotate(-$rotate*1);
+          border-radius: 50%;
+        }
+        
+        .circle_container  > *:nth-of-type(3) {
+          transform: rotate($rotate*2) translateY(-$circle_radius) rotate(-$rotate*2);
+          border-radius: 50%;
+        }
+        
+        .circle_container  > *:nth-of-type(4) {
+          transform: rotate($rotate*3) translateY(-$circle_radius) rotate(-$rotate*3);
+          border-radius: 50%;
+        }
+        
+        .circle_container  > *:nth-of-type(5) {
+          transform: rotate($rotate*4) translateY(-$circle_radius) rotate(-$rotate*4);
+          border-radius: 50%;
+        }
+        
+        .circle_container  > *:nth-of-type(6) {
+          transform: rotate($rotate*5) translateY(-$circle_radius) rotate(-$rotate*5);
+          border-radius: 50%;
+        }
+        
+        .circle_container  > *:nth-of-type(7) {
+          transform: rotate($rotate*6) translateY(-$circle_radius) rotate(-$rotate*6);
+          border-radius: 50%;
+        }
+        
+        .circle_container  > *:nth-of-type(8) {
+          transform: rotate($rotate*7) translateY(-$circle_radius) rotate(-$rotate*7);
+          border-radius: 50%;
+        }
+        
+        .circle_profile_container {
+        position: absolute;
+        // display: block;
+        z-index: -1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: $circle_diameter;
+        height: $circle_diameter;
+        background-image: url("../images/profile.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        
+        display: none;
+        
+        }
+        .circle_profile img{
+          position: absolute;
+          display: block;
+        
+          // width: 300px;
+          // height: 300px;
+          width: $circle_diameter;
+          height: $circle_diameter;
+        }
+        
+        
+        .circle .bg {
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+          z-index: 1;
+        
+        }
+        
+        
+        .circle.active_projects .bg1 {
+          background: url("../images/html-singapore.JPG");
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          display: block;
+          z-index: -1;
+          width: 100%;
+          margin: 0 auto;
+          transition: 1s ease-in-out;
+          transform: rotate($rotate_reverse*0) translateY($circle_radius) rotate(-$rotate*0) scale(3.9);
+          animation-name: rotate1;
+          animation-duration: 0.5s;
+        }
+        @keyframes rotate1 {
+          from {transform: rotate($rotate_reverse*0) translateY(0) rotate(-$rotate_reverse*0);
+          transform: scale(1);}
+          to {transform: rotate($rotate_reverse*0) translateY($circle_radius) rotate(-$rotate_reverse*0) scale(3.9);}
+         }
+        //  .circle.deactive_projects .bg1 {
+        //   animation-name: rotate1;
+        
+        //  }
+        
+        .circle.active_projects .bg2 {
+          background: url("../images/html-business.JPG");
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          display: block;
+          z-index: -1;
+          width: 100%;
+          margin: 0 auto;
+            transition: 1s ease-in-out;
+          transform: rotate($rotate_reverse*1) translateY($circle_radius) rotate(-$rotate*0) scale(3.9);
+          animation-name: rotate2;
+          animation-duration: 0.5s;
+          // animation-delay: 1s;
+          animation-fill-mode: forwards;
+        }
+        @keyframes rotate2 {
+          from {transform: rotate($rotate_reverse*1) translateY(0) rotate(-$rotate_reverse*1) scale(1);}
+          to {transform: rotate($rotate_reverse*1) translateY($circle_radius) rotate(-$rotate_reverse*1) scale(3.9);}
+         }
+         
+        .circle.active_projects .bg3 {
+          background: url("../images/javascript-game.JPG");
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          display: block;
+          z-index: -1;
+          width: 100%;
+          margin: 0 auto;
+          transition: 1s ease-in-out;
+          transform: rotate($rotate*2) translateY($circle_radius) scale(3.9);
+          animation-name: rotate3;
+          animation-duration: 0.5s;
+          animation-fill-mode: forwards;
+        }
+        @keyframes rotate3 {
+          from {transform: rotate($rotate_reverse*2) translateY(0) rotate(-$rotate_reverse*2) scale(1);}
+          to {transform: rotate($rotate_reverse*2) translateY($circle_radius) rotate(-$rotate_reverse*2) scale(3.9);}
+         }
+        
+        .circle.active_projects .bg4 {
+          background: url("../images/placeholder-images.png");
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          display: block;
+          z-index: -1;
+          width: 100%;
+          margin: 0 auto;
+          padding: 0;
+          transition: 1s ease-in-out;
+          transform: rotate($rotate*3) translateY($circle_radius) rotate(-$rotate*3)  scale(3.9);
+          animation-name: rotate4;
+          animation-duration: 0.5s;
+          animation-fill-mode: forwards;
+        }
+        @keyframes rotate4 {
+          from {transform: rotate($rotate_reverse*3) translateY(0) rotate(-$rotate_reverse*3) scale(1);}
+          to {transform: rotate($rotate_reverse*3) translateY($circle_radius) rotate(-$rotate_reverse*3) scale(3.9);}
+         }
+        
+        .circle.active_projects .bg5{
+          background: url("../images/placeholder-images.png");
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          display: block;
+          z-index: -1;
+          width: 100%;
+          margin: 0 auto;
+          padding: 0;
+          transition: 1s ease-in-out;
+          transform: rotate($rotate*4) translateY($circle_radius) rotate(-$rotate*4) scale(3.9);
+          animation-name: rotate5;
+          animation-duration: 0.5s;
+          animation-fill-mode: forwards;
+        }
+        @keyframes rotate5 {
+          from {transform: rotate($rotate_reverse*4) translateY(0) rotate(-$rotate_reverse*4) scale(1);}
+          to {transform: rotate($rotate_reverse*4) translateY($circle_radius) rotate(-$rotate_reverse*4) scale(3.9);}
+         }
+        
+         .circle.active_projects .bg6 {
+          background: url("../images/placeholder-images.png");
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          display: block;
+          z-index: -1;
+          width: 100%;
+          margin: 0 auto;
+          padding: 0;
+          transition: 1s ease-in-out;
+          transform: rotate($rotate*5) translateY($circle_radius) rotate(-$rotate*5) scale(3.9);
+          animation-name: rotate6;
+          animation-duration: 0.5s;
+          animation-fill-mode: forwards;
+        }
+        @keyframes rotate6 {
+          from {transform: rotate($rotate_reverse*5) translateY(0) rotate(-$rotate_reverse*5) scale(1);}
+          to {transform: rotate($rotate_reverse*5) translateY($circle_radius) rotate(-$rotate_reverse*5) scale(3.9);}
+         }
+        
+        .circle.active_projects .bg7 {
+          background: url("../images/placeholder-images.png");
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          display: block;
+          z-index: -1;
+          width: 100%;
+          margin: 0 auto;
+          padding: 0;
+          transition: 1s ease-in-out;
+          transform: rotate($rotate*6) translateY($circle_radius) rotate(-$rotate*6) scale(3.9);
+          animation-name: rotate7;
+          animation-duration: 0.5s;
+          animation-fill-mode: forwards;
+        
+        }
+        @keyframes rotate7 {
+          from {transform: rotate($rotate_reverse*6) translateY(0) rotate(-$rotate_reverse*6) scale(1);}
+          to {transform: rotate($rotate_reverse*6) translateY($circle_radius) rotate(-$rotate_reverse*6) scale(3.9);}
+         }
+        
+        .circle.active_projects .bg8 {
+        
+          background: url("../images/placeholder-images.png");
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          display: block;
+          z-index: -1;    
+          width: 100%;
+          margin: 0 auto;
+          padding: 0;
+          transition: 1s ease-in-out;
+          transform: rotate($rotate*7) translateY($circle_radius) rotate(-$rotate*7) scale(3.9);
+          animation-name: rotate8;
+          animation-duration: 0.5s;
+          animation-fill-mode: forwards;
+        }
+        @keyframes rotate8 {
+          from {transform: rotate($rotate_reverse*7) translateY(0) rotate(-$rotate_reverse*7) scale(1);}
+          to {transform: rotate($rotate_reverse*7) translateY($circle_radius) rotate(-$rotate_reverse*7) scale(3.9);}
+         }
+        

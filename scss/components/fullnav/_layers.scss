@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; */
+    // background-color: #262626;
+    font-family: 'Poppins', sans-serif;
+}
+.fullnav p {
+    color: #FFF;
+    /* font-family: 'Poppins', sans-serif; */
+}
+
+
+
+/* ======================
+    Slider styles
+   ======================
+*/
+
+.kontext  section{
+    width: 100vw;
+    height: calc(100% - 35px) !important;
+    position: relative;
+    overflow: hidden;
+    // overflow: auto;
+}
+
+/* ======================
+    bottom navigation - mobile
+   ======================
+*/
+.projectnavbar {
+    position: absolute;
+        bottom: 40px;
+    width: 100%;
+    transition: .5s;
+    display: flex;
+    z-index: 999999999;
+}
+
+ul.icons {
+    position: relative;
+    z-index: 999999999;
+    margin: 0 auto;
+    padding: 5px 5px 5px;
+    /* background: rgba(0,0,0, .3); */
+    display: inline-block;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0, .3);
+}
+ul.icons:hover {
+    content: '';
+    background: rgba(0,0,0,.6);
+}
+ul.icons li {
+    list-style: none;
+    text-align: center;
+    display: inline-block;
+    /* display: block; */
+    border-right: 1px solid rgba(0,0,0, 0.2);
+    padding: 0 5px 0;
+    cursor: pointer;
+    position: relative;
+}
+ul.icons li:last-child {
+    border-right: none;
+}
+ul.icons li a {
+    text-decoration: none;
+    margin: 0 auto;
+    display: block;
+    position: relative;
+    z-index: -9999;
+}
+ul.icons a .icon {
+    width: 34px;
+    height: 34px;
+    text-align: center;
+    overflow: hidden;
+    margin: 0 auto 10px;
+    position: relative;
+
+}
+ul.icons li a .icon svg {
+    display: inherit;
+    width: 34px;
+    height: 34px;
+    transition: .5s;
+    color: #fff;
+}
+ul.icons li a:hover .icon svg {
+    transform: translateY(-100%);
+}
+.icons li.active .icon svg {
+    cursor: default;
+    /** issue: strange translation error 
+     * quick fix: 
+     */
+        left:0;
+        transform: translateY(-150%);
+    position: relative;
+    z-index: -1000;
+}
+
+ul.icons li a .icon svg:last-child {
+    color: #e91e63
+}
+ul li a .name {
+    position: relative;
+    height: 20px;
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    z-index: -10;
+}
+ul li a .name span {
+    display: block;
+    position: relative;
+    color: #fff;
+    font-size: 18px;
+    line-height: 20px;
+    transition: 0.5s;
+}
+ul li a .name span:before {
+    content: attr(data-text);
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #e91e63;
+    z-index:-1;
+}
+
+ul li a:hover .name span {
+    transform: translateY(20px);
+}

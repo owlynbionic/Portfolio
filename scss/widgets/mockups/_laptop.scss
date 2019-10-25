@@ -1,0 +1,41 @@
+/* laptop mockup */
+.container-laptop {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    z-index: 2;
+}
+.laptop{
+width: 340px;
+height: 200px;
+background: #000;
+border: 16px solid #262626;
+box-shadow: 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
+overflow: hidden;
+}
+.laptop:before {
+content: '';
+position: absolute;
+bottom: -10px;
+left: -14%;
+width: 130%;
+height: 20px;
+background: #fff;
+border-top: 4px solid #ccc;
+border-bottom: 8px solid #ccc;
+border-top-left-radius: 2px;
+border-top-right-radius: 2px;
+border-bottom-left-radius: 20px;
+border-bottom-right-radius: 20px;
+}
+.laptop:after {
+content: '';
+position: absolute;
+width: 4px;
+height: 4px;
+border-radius: 50%;
+background: #262626;
+left: 50%;
+top: 6px;
+}
