@@ -106,3 +106,4 @@ backup
 /vendor/
 /app/Helpers.php
 /.idea/
+package-lock.json
