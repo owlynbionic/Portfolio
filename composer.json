@@ -1,0 +1,79 @@
+{
+    "name": "laravel/laravel",
+    "type": "project",
+    "description": "The Laravel Framework.",
+    "keywords": [
+        "framework",
+        "laravel"
+    ],
+    "authors": [
+        {
+            "name": "Nicholas Oentoro",
+            "email": "nicholasoentoro@gmail.com"
+        }
+    ],
+    "license": "MIT",
+    "require": {
+        "php": "^7.3|^8.0",
+        "fideloper/proxy": "^4.2",
+        "fruitcake/laravel-cors": "^1.0",
+        "guzzlehttp/guzzle": "^6.3",
+        "laravel/framework": "^8.32",
+        "laravel/telescope": "^4.4",
+        "laravel/tinker": "^2.0",
+        "laravel/ui": "^2.0",
+        "mll-lab/laravel-graphql-playground": "2.5.0",
+        "nuwave/lighthouse": "^5.3"
+    },
+    "require-dev": {
+        "barryvdh/laravel-ide-helper": "^2.9.0",
+        "facade/ignition": "^2.5.14",
+        "fzaninotto/faker": "^1.9.1",
+        "mockery/mockery": "^1.4.3",
+        "nunomaduro/collision": "^5.3",
+        "phpunit/phpunit": "^8.5.14"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "cache-dir": "/home/nichola5/domains/nicholaso.com/public_html/cache"
+    },
+    "extra": {
+        "laravel": {
+            "dont-discover": []
+        }
+    },
+    "autoload": {
+        "classmap": [
+            "database"
+        ],
+        "files": [
+            "app/Helpers.php"
+        ],
+        "psr-4": {
+            "App\\": "app/",
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@/usr/local/bin/php artisan package:discover --ansi"
+        ],
+        "post-root-package-install": [
+            "@/usr/local/bin/php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "@/usr/local/bin/php artisan key:generate --ansi"
+        ]
+    }
+}
