@@ -2,35 +2,36 @@
     "private": true,
     "scripts": {
         "dev": "npm run development",
-        "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "watch": "npm run development -- --watch",
-        "watch-poll": "npm run watch -- --watch-poll",
-        "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --disable-host-check --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "prod": "npm run production",
-        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "development": "mix",
+        "watch": "mix watch",
+        "watch-poll": "mix watch -- --watch-options-poll=1000",
+        "hot": "mix watch --hot",
+        "production": "mix --production",
         "build": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --config=node_modules/laravel-mix/setup/webpack.config.js"
     },
     "devDependencies": {
+        "@vue/compiler-sfc": "^3.0.7",
         "axios": "^0.21.1",
-        "bootstrap": "^4.0.0",
-        "cross-env": "^7.0",
+        "bootstrap": "^4.6.0",
+        "cross-env": "^7.0.3",
         "jquery": "^3.2",
-        "laravel-mix": "^5.0.1",
+        "laravel-mix": "^6.0.13",
         "lodash": "^4.17.13",
-        "popper.js": "^1.12",
-        "resolve-url-loader": "^2.3.1",
+        "popper.js": "^1.16.1",
+        "resolve-url-loader": "^3.1.2",
         "sass": "^1.20.1",
         "sass-loader": "^8.0.0",
-        "vue": "^2.5.17",
-        "vue-template-compiler": "^2.6.10"
+        "vue": "^3.0.7",
+        "vue-loader": "^16.1.2"
     },
     "dependencies": {
+        "@apollo/client": "^3.3.11",
         "apollo-boost": "^0.4.9",
-        "graphql": "^15.2.0",
-        "graphql-tag": "^2.10.3",
-        "moment": "^2.27.0",
-        "tailwindcss": "^1.4.6",
-        "vue-apollo": "^3.0.3",
-        "vue-router": "^3.3.4"
+        "graphql": "^15.5.0",
+        "graphql-tag": "^2.11.0",
+        "moment": "^2.29.1",
+        "vue-apollo": "^3.0.7",
+        "vue-router": "^4.0.5",
+        "vuex": "^4.0.0"
     }
 }
