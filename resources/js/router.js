@@ -6,9 +6,32 @@ Vue.use(Router);
 export default new Router({
   routes: [
     {
+      // the 404 route, when none of the above matches
       path: "/",
+      name: "posts",
+      component: () => import("./PostList"),
+      children: [
+        {
+          path:'/posts',
+          name: 'posts',
+          component: () => import("./PostList")
+        },
+        {
+          path: '/post/:id',
+          name: 'wp_post',
+          component: () => import("./Post")
+        },
+        {
+          path: '/authors/:id',
+          name: 'author',
+          component: () => import("./AuthorPostList")
+        },
+      ],
+    },
+    {
+      path: "/dashboard",
       redirect: "/dashboard",
-      component: () => import("./view/layout/Layout"),
+      component: () => import("./view/pages/Dashboard.vue"),
       children: [
         {
           path: "/dashboard",
