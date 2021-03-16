@@ -104,6 +104,5 @@ styles/*.map
 backup
 /.env
 /vendor/
-/app/Helpers.php
 /.idea/
 package-lock.json
