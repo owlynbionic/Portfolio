@@ -166,13 +166,13 @@
                     @include border-radius($border-radius);
 
                     &.fc-not-start.fc-not-end {
-                        @include border-top-right-radius(0);
-                        @include border-bottom-right-radius(0);
+                        @include border-top-end-radius(0);
+                        @include border-bottom-end-radius(0);
                     }
 
                     &.fc-not-start.fc-end {
-                        @include border-top-left-radius(0);
-                        @include border-bottom-left-radius(0);
+                        @include border-top-start-radius(0);
+                        @include border-bottom-start-radius(0);
                     }
                 }
             }
@@ -196,13 +196,13 @@
                 font-size: 1rem;
 
                 &.fc-corner-left {
-                    @include border-top-left-radius($border-radius);
-                    @include border-bottom-left-radius($border-radius);
+                    @include border-top-start-radius($border-radius);
+                    @include border-bottom-start-radius($border-radius);
                 }
 
                 &.fc-corner-right {
-                    @include border-top-right-radius($border-radius);
-                    @include border-bottom-right-radius($border-radius);
+                    @include border-top-end-radius($border-radius);
+                    @include border-bottom-end-radius($border-radius);
                 }
 
                 .fc-icon {

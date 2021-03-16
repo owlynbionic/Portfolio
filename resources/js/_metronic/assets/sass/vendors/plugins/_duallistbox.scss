@@ -40,8 +40,8 @@
             padding: 0.75rem 0.75rem;
             border: 1px solid $gray-200;
             border-bottom: 0;
-            @include border-top-left-radius($border-radius);
-            @include border-top-right-radius($border-radius);
+            @include border-top-start-radius($border-radius);
+            @include border-top-end-radius($border-radius);
         }
 
         .dual-listbox__buttons {
@@ -81,8 +81,8 @@
             width: auto;
             color: $input-plaintext-color;
             border: 1px solid $gray-200;
-            @include border-bottom-left-radius($border-radius);
-            @include border-bottom-right-radius($border-radius);
+            @include border-bottom-start-radius($border-radius);
+            @include border-bottom-end-radius($border-radius);
 
             .dual-listbox__item {
                 padding: 0.75rem 0.75rem;

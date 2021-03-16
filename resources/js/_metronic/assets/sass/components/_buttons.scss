@@ -233,12 +233,12 @@
 	}
 
 	&.dropleft > .btn {
-		@include border-top-right-radius($btn-border-radius !important);
-		@include border-bottom-right-radius($btn-border-radius !important);
+		@include border-top-end-radius($btn-border-radius !important);
+		@include border-bottom-end-radius($btn-border-radius !important);
 
 		&.dropdown-toggle-split {
-			@include border-top-right-radius(0 !important);
-			@include border-bottom-right-radius(0 !important);
+			@include border-top-end-radius(0 !important);
+			@include border-bottom-end-radius(0 !important);
 		}
 
 		&.dropdown-toggle {

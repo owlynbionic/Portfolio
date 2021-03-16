@@ -11,7 +11,7 @@
 @import "init";
 
 // 2: Bootstrap framework includes
-@import "../../../../../node_modules/bootstrap/scss/mixins";
+@import "./node_modules/bootstrap/scss/bootstrap";
 @import "vendors/vue/include";
 
 // 3: Components

@@ -24,8 +24,8 @@ $kanban-spacer-x: 1.25rem;
 		}
 
 		.kanban-board-header {
-			@include border-top-left-radius($border-radius);
-			@include border-top-right-radius($border-radius);
+			@include border-top-start-radius($border-radius);
+			@include border-top-end-radius($border-radius);
 
 			.kanban-title-board {
 				font-size: 1.2rem;

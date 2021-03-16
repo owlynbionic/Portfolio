@@ -346,15 +346,15 @@
 
 			&:first-child {
 				.nav-link {
-					@include border-top-left-radius($rounded-pill);
-					@include border-bottom-left-radius($rounded-pill);
+					@include border-top-start-radius($border-radius-pill);
+					@include border-bottom-start-radius($border-radius-pill);
 				}
 			}
 
 			&:last-child {
 				.nav-link {
-					@include border-top-right-radius($rounded-pill);
-					@include border-bottom-right-radius($rounded-pill);
+					@include border-top-end-radius($border-radius-pill);
+					@include border-bottom-end-radius($border-radius-pill);
 				}
 			}
 		}
@@ -363,15 +363,15 @@
 		&.nav-rounded {
 			&:first-child {
 				.nav-link {
-					@include border-top-left-radius($border-radius);
-					@include border-bottom-left-radius($border-radius);
+					@include border-top-start-radius($border-radius);
+					@include border-bottom-start-radius($border-radius);
 				}
 			}
 
 			&:last-child {
 				.nav-link {
-					@include border-top-right-radius($border-radius);
-					@include border-bottom-right-radius($border-radius);
+					@include border-top-end-radius($border-radius);
+					@include border-bottom-end-radius($border-radius);
 				}
 			}
 		}

@@ -46,8 +46,8 @@ $example-spacer-x: 1.5rem;
             background-color: $gray-100;
             transition: $transition;
             color: $primary;
-            @include border-top-left-radius($border-radius);
-            @include border-top-right-radius($border-radius);
+            @include border-top-start-radius($border-radius);
+            @include border-top-end-radius($border-radius);
 
             &:after {
                 content:  '#{get($ki-types, hide)}';
@@ -77,8 +77,8 @@ $example-spacer-x: 1.5rem;
     .example-preview {
         border: 4px solid $gray-100;
         padding: $example-spacer-y $example-spacer-x;
-        @include border-top-left-radius($border-radius);
-        @include border-top-right-radius($border-radius);
+        @include border-top-start-radius($border-radius);
+        @include border-top-end-radius($border-radius);
     }
 
     .example-nav.nav {
@@ -145,8 +145,8 @@ $example-spacer-x: 1.5rem;
     }
 
     .example-preview + .example-code {
-        @include border-top-left-radius(0);
-        @include border-top-right-radius(0);
+        @include border-top-start-radius(0);
+        @include border-top-end-radius(0);
 
         .example-copy {
             top: 0rem;
@@ -154,8 +154,8 @@ $example-spacer-x: 1.5rem;
         }
 
         pre[class*="language-"] {
-            @include border-top-left-radius(0);
-            @include border-top-right-radius(0);
+            @include border-top-start-radius(0);
+            @include border-top-end-radius(0);
         }
     }
 
@@ -191,8 +191,8 @@ $example-spacer-x: 1.5rem;
         }
 
         .example-preview + .example-code {
-            @include border-top-left-radius(0);
-            @include border-top-right-radius(0);
+            @include border-top-start-radius(0);
+            @include border-top-end-radius(0);
         }
     }
 }

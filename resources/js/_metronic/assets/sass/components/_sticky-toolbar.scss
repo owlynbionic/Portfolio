@@ -17,6 +17,6 @@
     align-items: center;
     flex-direction: column;
 
-    @include border-top-left-radius($border-radius);
-    @include border-bottom-left-radius($border-radius);
+    @include border-top-start-radius($border-radius);
+    @include border-bottom-start-radius($border-radius);
 }

@@ -137,8 +137,8 @@
 				background-color: $gray-100;
 
 				@include border-radius($border-radius);
-				@include border-bottom-left-radius(0);
-				@include border-bottom-right-radius(0);
+				@include border-bottom-start-radius(0);
+				@include border-bottom-end-radius(0);
 
 				&.collapsed {
 					@include border-radius($border-radius);
@@ -148,8 +148,8 @@
 
 		.card-body {
 			border: 1px solid $gray-100;
-			@include border-bottom-left-radius($border-radius);
-			@include border-bottom-right-radius($border-radius);
+			@include border-bottom-start-radius($border-radius);
+			@include border-bottom-end-radius($border-radius);
 		}
 
 		margin-bottom: 1.25rem;
