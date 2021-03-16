@@ -1,0 +1,1 @@
+import i from "./algorithms";import o,{Plugin as r}from "./core";import m from "./filters";import t from "./plugins";import e from "./utils";import n from "./validators";const p={};export{i as algorithms,o as formValidation,m as filters,p as locales,t as plugins,e as utils,n as validators,r as Plugin};
