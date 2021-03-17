@@ -8,7 +8,7 @@ export default new Router({
     {
       // the 404 route, when none of the above matches
       path: "/",
-      name: "posts",
+      redirect: "posts",
       component: () => import("./PostList"),
       children: [
         {
