@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTopicsTable extends Migration
+class CreateWpPostsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class CreateTopicsTable extends Migration
      */
     public function up()
     {
-        Schema::create('topics', function (Blueprint $table) {
+        Schema::create('wp_posts', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
 
-            $table->string('slug');
-            $table->string('name');
+            $table->string('title');
+            $table->text('lead');
+            $table->text('content');
         });
     }
 
@@ -29,6 +30,6 @@ class CreateTopicsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('topics');
+        Schema::dropIfExists('wp_posts');
     }
 }

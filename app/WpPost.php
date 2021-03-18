@@ -2,10 +2,10 @@
 
 namespace App;
 
-use App\Corcel\Models\Post as WPPost;
+use App\Corcel\Models\Post as WP_Post;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Post extends WPPost
+class WpPost extends WP_Post
 {
 
     public function author(): BelongsTo
