@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/{any?}', function () {
-    return view('welcome');
-})->where('any', '^(?!graphql)[\/\w\.-]*');
+//Route::get('/{any?}', function () {
+//    return view('app');
+//})->where('any', '^(?!graphql)[\/\w\.-]*');
+
+Route::fallback(function () {
+    return view('app');
+});

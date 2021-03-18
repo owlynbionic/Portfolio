@@ -29,6 +29,31 @@ export default new Router({
       ],
     },
     {
+      path: "/board",
+      component: () => import("./Board"),
+      children: [
+        { path: "/board", name: "board",
+          component: () => import("./Board")
+        },
+      ]
+    },
+    {
+      path: "/",
+      component: () => import("./Login"),
+      children: [
+        {
+          name: "login",
+          path: "/login",
+          component: () => import("./Login")
+        },
+        {
+          name: "register",
+          path: "/register",
+          component: () => import("./Register")
+        }
+      ]
+    },
+    {
       path: "/dashboard",
       redirect: "/dashboard",
       component: () => import("./view/pages/Dashboard.vue"),
@@ -479,22 +504,22 @@ export default new Router({
         }
       ]
     },
-    {
-      path: "/",
-      component: () => import("./view/pages/auth/login_pages/Login-1.vue"),
-      children: [
-        {
-          name: "login",
-          path: "/login",
-          component: () => import("./view/pages/auth/login_pages/Login-1.vue")
-        },
-        {
-          name: "register",
-          path: "/register",
-          component: () => import("./view/pages/auth/login_pages/Login-1.vue")
-        }
-      ]
-    },
+    // {
+    //   path: "/",
+    //   component: () => import("./view/pages/auth/login_pages/Login-1.vue"),
+    //   children: [
+    //     {
+    //       name: "login",
+    //       path: "/login",
+    //       component: () => import("./view/pages/auth/login_pages/Login-1.vue")
+    //     },
+    //     {
+    //       name: "register",
+    //       path: "/register",
+    //       component: () => import("./view/pages/auth/login_pages/Login-1.vue")
+    //     }
+    //   ]
+    // },
     {
       path: "*",
       redirect: "/404"
