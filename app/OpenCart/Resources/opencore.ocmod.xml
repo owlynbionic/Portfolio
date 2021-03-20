@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+	<code>OpenCore</code>
+	<name>OpenCore - Laravel 5.8</name>
+	<version>1.0</version>
+	<author>AWeb Design</author>
+	<link>https://www.awebdesign.ro</link>
+	<!--Url routing START -->
+	<file path="system/library/url.php">
+		<operation>
+			<search><![CDATA[class Url {]]></search>
+			<add position="before"><![CDATA[
+/* OpenCore Module */
+//require_once realpath(DIR_SYSTEM . '/../') . '/core/vendor/autoload.php';
+require_once realpath(DIR_SYSTEM . '/../') . '/core/support/Opencart/OcCore.php';
+
+use OpenCore\Support\OpenCart\OcCore;
+]]></add>
+		</operation>
+		<operation>
+			<search><![CDATA[class Url {]]></search>
+			<add position="after"><![CDATA[use OcCore;]]></add>
+		</operation>
+		<operation>
+			<search><![CDATA[return $url;]]></search>
+			<add position="replace"><![CDATA[return $this->removeIndexAndRouteParam($url);]]></add>
+		</operation>
+	</file>
+	<file path="catalog/controller/startup/seo_url.php">
+		<operation>
+			<search><![CDATA[class ControllerStartupSeoUrl]]></search>
+			<add position="before"><![CDATA[
+/* OpenCore Module */
+use OpenCore\Support\OpenCart\OcCore;
+]]></add>
+		</operation>
+		<operation>
+			<search><![CDATA[Controller {]]></search>
+			<add position="after"><![CDATA[use OcCore;]]></add>
+		</operation>
+        <operation>
+			<search><![CDATA[public function index() {]]></search>
+			<add position="replace"><![CDATA[/* OpenCore Module */
+            public function index() {
+                $this->oldSeoUrlindex();
+
+                $this->routeCatalogSeoUrl();
+            }
+
+            public function oldSeoUrlindex() {
+            ]]></add>
+		</operation>
+	</file>
+    <!-- if using SEO MEGA PACK -->
+    <file path="catalog/controller/common/seo_mega_pack_pro_url.php">
+		<operation>
+			<search><![CDATA[class ControllerCommonSeoMegaPackProUrl]]></search>
+			<add position="before"><![CDATA[
+/* OpenCore Module */
+use OpenCore\Support\OpenCart\OcCore;
+]]></add>
+		</operation>
+		<operation>
+			<search><![CDATA[Controller {]]></search>
+			<add position="after"><![CDATA[use OcCore;]]></add>
+		</operation>
+        <operation>
+			<search><![CDATA[if( $this->request->get['route'] == 'error/not_found' ) {]]></search>
+			<add position="before"><![CDATA[$this->routeCatalogSeoUrl();]]></add>
+		</operation>
+        <operation>
+			<search><![CDATA[return new Action( $this->request->get['route'] );]]></search>
+			<add position="before"><![CDATA[if($this->isRouted($this->request->get['route'])) {
+                return true; //we have found a OpenCore match so we will ignore the rest of SeoPack
+            }]]></add>
+		</operation>
+	</file>
+	<!--Url routing END -->
+    <file path="system/library/cart/user.php">
+		<operation>
+			<search><![CDATA[if (isset($this->permission[$key])) {]]></search>
+			<add position="before"><![CDATA[
+        /* OpenCore Module */
+        if(isset($this->permission[$key]) && ($regex_permissions = preg_grep("/\*/", $this->permission[$key]))) {
+            $regex = '/(' . str_replace('/', '\/', implode('|', $regex_permissions)) . ')/';
+            $match = (bool) preg_match($regex, $value, $matches);
+            if($match) {
+                return true;
+            }
+        }]]></add>
+		</operation>
+		<operation>
+			<search><![CDATA[class Url {]]></search>
+			<add position="after"><![CDATA[use OcCore;]]></add>
+		</operation>
+		<operation>
+			<search><![CDATA[return $url;]]></search>
+			<add position="replace"><![CDATA[return $this->routeUrl($url);]]></add>
+		</operation>
+	</file>
+    <!-- Mysql Share Driver -->
+    <file path="system/library/db.php">
+		<operation>
+			<search><![CDATA[$class = 'DB\\' . $adaptor;]]></search>
+			<add position="before"><![CDATA[
+        /* OpenCore Module */
+        if(!defined('OPENCORE_DISABLED') && in_array(strtolower($adaptor), ['mysqli', 'mysql', 'mpdo'])) {
+            $adaptor = 'corepdo';
+        }
+    ]]></add>
+		</operation>
+		<operation>
+			<search><![CDATA[public function connected() {]]></search>
+			<add position="before"><![CDATA[
+    /* OpenCore Module */
+    public function getConnection() {
+		return $this->adaptor->getConnection();
+	}]]></add>
+        </operation>
+		<operation>
+			<search><![CDATA[if (class_exists('NitroDb')]]></search>
+			<add position="replace"><![CDATA[if (defined('OPENCORE_DISABLED') && class_exists('NitroDb')]]></add>
+		</operation>
+	</file>
+</modification>
