@@ -3,19 +3,22 @@
 </template>
 
 <style lang="scss">
-// 3rd party plugins css
-@import "~bootstrap-vue/dist/bootstrap-vue.css";
-@import "~perfect-scrollbar/css/perfect-scrollbar.css";
+  @import "../css/bootstrap.min.css";
+  /*@import "../css/styles.min.css";*/
+
+  // 3rd party plugins css
+/*@import "~bootstrap-vue/dist/bootstrap-vue.css";*/
+/*@import "~perfect-scrollbar/css/perfect-scrollbar.css";*/
 /*@import "~socicon/css/socicon.css";*/
 /*@import "~animate.css";*/
 /*@import "~@fortawesome/fontawesome-free/css/all.css";*/
 /*@import "~line-awesome/dist/line-awesome/css/line-awesome.css";*/
-@import "_metronic/assets/plugins/flaticon/flaticon.css";
-@import "_metronic/assets/plugins/flaticon2/flaticon.css";
-@import "_metronic/assets/plugins/keenthemes-icons/font/ki.css";
+/*@import "_metronic/assets/plugins/flaticon/flaticon.css";*/
+/*@import "_metronic/assets/plugins/flaticon2/flaticon.css";*/
+/*@import "_metronic/assets/plugins/keenthemes-icons/font/ki.css";*/
 
 // Main demo style scss
-@import "_metronic/assets/sass/style.vue";
+/*@import "_metronic/assets/sass/style.vue";*/
 
 // Check documentation for RTL css
 // Update HTML with RTL attribute at public/index.html

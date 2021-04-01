@@ -10,9 +10,10 @@ scalar DateTimeTz
     @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\DateTimeTz")
 
 type Query {
-    wp_users: [WpAuthor!]! @paginate(defaultCount: 10)
-    wp_user(id: ID! @eq): WpAuthor @find
-    wp_posts: [WpPost!]! @all
+    wp_users: [WpUser!]! @all
+    wp_user(id: ID! @eq): WpUser @find
+
+    wp_posts(where: _ @whereConditions(columns: ["post_status", "post_type"])): [WpPost!]! @all
     wp_post(id: ID! @eq): WpPost! @find
 
     boards: [Board!] @all
@@ -46,26 +47,28 @@ type Mutation {
     ): User @create @event(dispatch: "Illuminate\\Auth\\Events\\Registered")
 }
 
-type WpAuthor {
-    ID: ID!
-    display_name: String!
-    wp_posts: [WpPost!]! @hasMany
-}
 
 type WpUser {
-    ID: ID!
-    user_login: String!
-    user_email: String!
-    user_registered: DateTime!
+    ID: ID
+#    user_login: String!
+#    user_email: String!
+#    user_registered: DateTime!
+    display_name: String
+#    wp_posts: [WpPost!] @HasOne
 }
 
 type WpPost {
     ID: ID!
     post_title: String!
     post_content: String
+    post_status: String!
+    post_type: String!
     post_date: DateTime!
     post_modified: DateTime!
-    post_author: WpAuthor! @belongsTo
+#    post_author: WpAuthor! @belongsTo
+    post_author: Int!
+#    post_author(id: ID! @eq): WpUser @find
+#    post_author: WpUser
 }
 
 type User {

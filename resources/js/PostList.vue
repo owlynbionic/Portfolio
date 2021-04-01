@@ -19,19 +19,19 @@ export default {
   },
   apollo: {
     wp_posts: gql`
-      {
-        wp_posts {
-          ID
-          post_title
-          post_content
-          post_date
-#          post_author {
-#            ID
-#            display_name
-#          }
-
-        }
+    {
+      wp_posts(where: {AND: [
+        { column: POST_TYPE, operator: EQ, value: "product" }
+        { column: POST_STATUS, operator: EQ, value: "publish" }
+      ]
+      }) {
+        ID
+        post_title
+        post_content
+        post_date
+        post_author
       }
+    }
     `
   }
 };

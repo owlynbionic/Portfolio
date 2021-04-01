@@ -10,7 +10,7 @@ class WpPost extends WP_Post
 
     public function author(): BelongsTo
     {
-        return $this->belongsTo(Author::class, 'post_author');
+        return $this->belongsTo(WpUser::class, 'post_author');
     }
 
 }

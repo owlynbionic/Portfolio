@@ -13,7 +13,7 @@ export default new Router({
       children: [
         {
           path:'/posts',
-          name: 'posts',
+          name: 'wp_posts',
           component: () => import("./PostList")
         },
         {
@@ -23,10 +23,73 @@ export default new Router({
         },
         {
           path: '/authors/:id',
-          name: 'author',
+          name: 'wp_author',
           component: () => import("./AuthorPostList")
         },
       ],
+    },
+    {
+      path: "/home",
+      component: () => import("./views/pages/home/Home"),
+      children: [
+        { path: "/home", name: "home",
+          component: () => import("./views/pages/home/Home")
+        },
+      ]
+    },
+    {
+      path: "/about",
+      component: () => import("./views/pages/about/About"),
+      children: [
+        { path: "/about", name: "about",
+          component: () => import("./views/pages/about/About")
+        },
+      ]
+    },
+    {
+      path: "/blog",
+      component: () => import("./views/pages/blog/Blog"),
+      children: [
+        { path: "/blog", name: "blog",
+          component: () => import("./views/pages/blog/Blog")
+        },
+      ]
+    },
+    {
+      path: "/projects",
+      component: () => import("./views/pages/projects/Projects"),
+      children: [
+        { path: "/projects", name: "projects",
+          component: () => import("./views/pages/projects/Projects")
+        },
+      ]
+    },
+    {
+      path: "/music",
+      component: () => import("./views/pages/music/Music"),
+      children: [
+        { path: "/music", name: "music",
+          component: () => import("./views/pages/music/Music")
+        },
+      ]
+    },
+    {
+      path: "/news",
+      component: () => import("./views/pages/news/News"),
+      children: [
+        { path: "/news", name: "news",
+          component: () => import("./views/pages/news/News")
+        },
+      ]
+    },
+    {
+      path: "/game",
+      component: () => import("./views/pages/game/Game"),
+      children: [
+        { path: "/game", name: "game",
+          component: () => import("./views/pages/game/Game")
+        },
+      ]
     },
     {
       path: "/board",

@@ -2,16 +2,15 @@
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use App\Corcel\Models\User as WP_User;
 
 class WpUser extends WP_User
 {
 
-    public function posts(): HasMany
+    public function posts(): HasOne
     {
-        return $this->hasMany(Post::class, 'post_author');
+        return $this->HasOne(WpAuthor::class, 'post_author');
     }
 
 }

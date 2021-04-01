@@ -58,11 +58,7 @@ export default {
             post_title
             post_content
             post_date
-#            post_author {
-#              ID
-#              display_name
-#            }
-
+            post_author
           }
         }
       `,
