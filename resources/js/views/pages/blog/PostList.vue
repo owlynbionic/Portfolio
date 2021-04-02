@@ -11,7 +11,10 @@
     </div>
   </div>
 </template>
+<style lang="scss">
 
+  @import "../../../../css/styles.min.css";
+</style>
 <script>
 import gql from "graphql-tag";
 import PostListItem from "./PostListItem";
@@ -41,7 +44,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-  @import "../../../../../resources/css/styles.min.css";
-</style>

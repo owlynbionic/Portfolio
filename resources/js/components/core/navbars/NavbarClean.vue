@@ -1,10 +1,13 @@
 <template>
-  <div>
+  <header class="header-clear">
     <nav class="navbar navbar-light rm-icon-bar-wrapper">
       <div class="container">
         <ul class="navbar-nav shadow-lg bg-secondary rm-icon-bar is-scrollable inverttooltips">
-          <li class="nav-item bg-dark"><a class="nav-link" href="windows.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="1em" height="1em"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/></svg></a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-house-fill">
+          <li class="nav-item bg-dark"><a class="nav-link" href="windows.html"><svg viewBox="0 0 24 24" width="1em" height="1em">
+            <path d="M0 0h24v24H0z"></path>
+            <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"></path>
+          </svg></a></li>
+          <li class="nav-item"><a class="nav-link active" href="index.html"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-house-fill">
             <path fill-rule="evenodd" d="M8 3.293l6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"></path>
             <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"></path>
           </svg></a></li>
@@ -32,38 +35,11 @@
         </ul>
       </div>
     </nav>
-    <header>
-      <div class="row g-0 justify-content-end sidebar-wrapper">
-        <div class="col">
-          <div class="row g-0">
-            <div class="col-11 col-xl-12 order-xl-2">
-              <nav class="navbar navbar-light navbar-expand-sm">
-                <div class="container-fluid">
-                  <ul class="navbar-nav d-flex d-sm-flex flex-row justify-content-start align-items-center flex-xl-column align-items-xl-start sidebar-list">
-                    <li class="nav-item"><a class="nav-link active" href="about.html" style="text-align: left;">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                    <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
-                  </ul>
-                </div>
-              </nav>
-            </div>
-            <div class="col-1 col-xl-12 d-flex justify-content-center"><a class="d-flex justify-content-center align-items-center w-100" href="#"><img class="img-fluid w-100" src="assets/img/apple-touch-icon.png" style="width: 40px;max-height: 40px;max-width: 40px;"></a></div>
-          </div>
-        </div>
-      </div>
-    </header>
-  </div>
-
+  </header>
 </template>
 
 <script>
-export default {
-  name: "About"
-}
 </script>
 
 <style scoped>
-  @import "../../../../../resources/css/styles.min.css";
 </style>
-

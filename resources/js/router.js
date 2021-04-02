@@ -9,17 +9,12 @@ export default new Router({
       // the 404 route, when none of the above matches
       path: "/",
       redirect: "posts",
-      component: () => import("./PostList"),
+      component: () => import("./views/pages/blog/PostList"),
       children: [
         {
           path:'/posts',
           name: 'wp_posts',
-          component: () => import("./PostList")
-        },
-        {
-          path: '/post/:id',
-          name: 'wp_post',
-          component: () => import("./Post")
+          component: () => import("./views/pages/blog/PostList")
         },
         {
           path: '/authors/:id',
@@ -27,6 +22,11 @@ export default new Router({
           component: () => import("./AuthorPostList")
         },
       ],
+    },
+    {
+      path: '/post/:id',
+      name: 'wp_post',
+      component: () => import("./views/pages/blog/Post")
     },
     {
       path: "/home",
@@ -57,10 +57,15 @@ export default new Router({
     },
     {
       path: "/projects",
-      component: () => import("./views/pages/projects/Projects"),
+      component: () => import("./views/pages/portfolio/Portfolio"),
       children: [
-        { path: "/projects", name: "projects",
-          component: () => import("./views/pages/projects/Projects")
+        { path: "/portfolio", name: "projects",
+          component: () => import("./views/pages/portfolio/Portfolio")
+        },
+        {
+          path: '/projects/:id',
+          name: 'project',
+          component: () => import("./views/pages/blog/Post")
         },
       ]
     },
@@ -88,6 +93,15 @@ export default new Router({
       children: [
         { path: "/game", name: "game",
           component: () => import("./views/pages/game/Game")
+        },
+      ]
+    },
+    {
+      path: "/services",
+      component: () => import("./views/pages/shop/Shop"),
+      children: [
+        { path: "/services", name: "services",
+          component: () => import("./views/pages/shop/Shop")
         },
       ]
     },

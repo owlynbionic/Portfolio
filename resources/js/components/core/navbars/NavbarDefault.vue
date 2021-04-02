@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <header>
     <nav class="navbar navbar-light rm-icon-bar-wrapper">
       <div class="container">
         <ul class="navbar-nav shadow-lg bg-secondary rm-icon-bar is-scrollable inverttooltips">
@@ -32,38 +32,38 @@
         </ul>
       </div>
     </nav>
-    <header>
-      <div class="row g-0 justify-content-end sidebar-wrapper">
-        <div class="col">
-          <div class="row g-0">
-            <div class="col-11 col-xl-12 order-xl-2">
-              <nav class="navbar navbar-light navbar-expand-sm">
-                <div class="container-fluid">
-                  <ul class="navbar-nav d-flex d-sm-flex flex-row justify-content-start align-items-center flex-xl-column align-items-xl-start sidebar-list">
-                    <li class="nav-item"><a class="nav-link active" href="about.html" style="text-align: left;">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                    <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
-                  </ul>
-                </div>
-              </nav>
-            </div>
-            <div class="col-1 col-xl-12 d-flex justify-content-center"><a class="d-flex justify-content-center align-items-center w-100" href="#"><img class="img-fluid w-100" src="assets/img/apple-touch-icon.png" style="width: 40px;max-height: 40px;max-width: 40px;"></a></div>
+
+    <div class="row g-0 justify-content-end sidebar-wrapper">
+      <div class="col">
+        <div class="row g-0">
+          <div class="col-11 col-xl-12 order-xl-2">
+            <nav class="navbar navbar-light navbar-expand-sm">
+              <div class="container-fluid">
+                <ul class="navbar-nav d-flex d-sm-flex flex-row justify-content-start align-items-center flex-xl-column align-items-xl-start sidebar-list">
+                  <li class="nav-item"><a class="nav-link" href="about.html" style="text-align: left;">About</a></li>
+                  <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                  <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
+                  <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+                </ul>
+              </div>
+            </nav>
           </div>
+          <div class="col-1 col-xl-12 d-flex justify-content-center"><a class="d-flex justify-content-center align-items-center w-100" href="#"><img class="img-fluid w-100" src="assets/img/apple-touch-icon.png" style="width: 40px;max-height: 40px;max-width: 40px;"></a></div>
         </div>
       </div>
-    </header>
-  </div>
+    </div>
+  </header>
 
 </template>
 
 <script>
+
 export default {
-  name: "About"
-}
+  name: "NavbarDefault"
+
+};
 </script>
 
 <style scoped>
-  @import "../../../../../resources/css/styles.min.css";
-</style>
 
+</style>

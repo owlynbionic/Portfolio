@@ -6,20 +6,23 @@
       <div v-if="$apollo.loading"></div>
 
       <div v-else>
-        <PostListItem v-for="wp_post in wp_posts" :key="wp_post.ID" :wp_post="wp_post" class="mt-10"></PostListItem>
+        <TemplateListItem v-for="wp_post in wp_posts" :key="wp_post.ID" :wp_post="wp_post" class="mt-10"></TemplateListItem>
       </div>
     </div>
   </div>
 </template>
+<style lang="scss">
 
+  @import "../../../../css/styles.min.css";
+</style>
 <script>
 import gql from "graphql-tag";
-import PostListItem from "./PostListItem";
+import TemplateListItem from "./TemplateListItem";
 import NavbarDefault from "../../../components/core/navbars/NavbarDefault";
 
 export default {
   components: {
-    PostListItem,
+    TemplateListItem,
     NavbarDefault
   },
   apollo: {
@@ -41,7 +44,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-  @import "../../../../../resources/css/styles.min.css";
-</style>
