@@ -60,6 +60,7 @@ type WpUser {
 type WpPost {
     ID: ID!
     post_title: String!
+    post_excerpt: String
     post_content: String
     post_status: String!
     post_type: String!

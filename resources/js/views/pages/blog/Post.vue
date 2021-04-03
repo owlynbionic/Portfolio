@@ -14,7 +14,7 @@
 
       <h1 class="text-5xl mt-10 font-bold mb-12">{{ wp_post.title }}</h1>
 
-      <div v-html="wp_post.post_content" class="text-gray-700 pb-3 mb-12 whitespace-pre-line"></div>
+      <div v-html="wp_post.post_content" class="wp_post text-gray-700 pb-3 mb-12 whitespace-pre-line"></div>
 
       <div class="mb-24 flex">
         <div class="mr-6">
@@ -74,3 +74,7 @@ export default {
   }
 };
 </script>
+<style scoped>
+  .wp_post >>> p {
+  }
+</style>

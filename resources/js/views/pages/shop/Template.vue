@@ -14,16 +14,9 @@
 
       <h1 class="text-5xl mt-10 font-bold mb-12">{{ wp_post.title }}</h1>
 
-      <div v-html="wp_post.post_content" class="text-gray-700 pb-3 mb-12 whitespace-pre-line"></div>
+      <div v-html="wp_post.post_content" class="wp_post text-gray-700 pb-3 mb-12 whitespace-pre-line"></div>
 
       <div class="mb-24 flex">
-        <div class="mr-6">
-          <!--          <img-->
-          <!--            :src="'/storage/faces/' + wp_post.post_author.avatar"-->
-          <!--            alt="Author avatar"-->
-          <!--            class="w-16 h-16 rounded-full"-->
-          <!--          />-->
-        </div>
         <div class="flex flex-col justify-center">
           <div class="text-xl text-gray-600">
             Written by
@@ -33,12 +26,7 @@
             >{{ wp_post.post_author }}</router-link>
           </div>
           <div class="text-gray-600">
-            Published in
-            <!--            <router-link-->
-            <!--              :to="{name: 'topic', params: {slug: wp_post.topic.slug}}"-->
-            <!--              class="underline hover:text-black"-->
-            <!--            >{{ wp_post.topic.name }}</router-link>-->
-            &nbsp;on {{ wp_post.post_date | longDate }}
+            Published on {{ wp_post.post_date | longDate }}
           </div>
         </div>
       </div>
@@ -75,3 +63,7 @@ export default {
   }
 };
 </script>
+<style scoped>
+  .wp_post >>> p {
+  }
+</style>

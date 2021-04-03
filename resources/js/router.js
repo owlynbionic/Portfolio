@@ -16,19 +16,19 @@ export default new Router({
           name: 'wp_posts',
           component: () => import("./views/pages/blog/PostList")
         },
-        {
-          path: '/post/:id',
-          name: 'wp_post',
-          component: () => import("./views/pages/blog/Post")
-        },
-        {
-          path: '/authors/:id',
-          name: 'wp_author',
-          component: () => import("./AuthorPostList")
-        },
+
       ],
     },
-
+    {
+      path: '/post/:id',
+      name: 'wp_post',
+      component: () => import("./views/pages/blog/Post")
+    },
+    {
+      path: '/authors/:id',
+      name: 'wp_author',
+      component: () => import("./AuthorPostList")
+    },
     {
       path: "/home",
       component: () => import("./views/pages/home/Home"),
@@ -56,20 +56,20 @@ export default new Router({
         },
       ]
     },
-    {
-      path: "/projects",
-      component: () => import("./views/pages/portfolio/Portfolio"),
-      children: [
-        { path: "/portfolio", name: "projects",
+    // {
+    //   path: "/projects",
+    //   component: () => import("./views/pages/portfolio/Portfolio"),
+    //   children: [
+        { path: "/projects", name: "projects",
           component: () => import("./views/pages/portfolio/Portfolio")
         },
         {
           path: '/projects/:id',
           name: 'project',
-          component: () => import("./views/pages/blog/Post")
+          component: () => import("./views/pages/portfolio/Project")
         },
-      ]
-    },
+    //   ]
+    // },
     {
       path: "/music",
       component: () => import("./views/pages/music/Music"),
@@ -89,10 +89,10 @@ export default new Router({
       ]
     },
     {
-      path: "/game",
+      path: "/unity",
       component: () => import("./views/pages/game/Game"),
       children: [
-        { path: "/game", name: "game",
+        { path: "/unity", name: "unity",
           component: () => import("./views/pages/game/Game")
         },
       ]

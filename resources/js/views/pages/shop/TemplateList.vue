@@ -35,6 +35,7 @@ export default {
       }) {
         ID
         post_title
+        post_excerpt
         post_content
         post_date
         post_author

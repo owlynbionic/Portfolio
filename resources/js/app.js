@@ -65,6 +65,9 @@ const apolloProvider = new VueApollo({
 
 Vue.filter("timeago", value => moment(value).fromNow());
 Vue.filter("longDate", value => moment(value).format("MMMM Do YYYY"));
+Vue.filter("day", value => moment(value).format("DD"));
+Vue.filter("month", value => moment(value).format("MMM"));
+Vue.filter("year", value => moment(value).format("YYYY"));
 
 new Vue({
     router,
