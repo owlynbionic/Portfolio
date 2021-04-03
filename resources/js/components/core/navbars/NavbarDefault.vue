@@ -40,7 +40,7 @@
             <nav class="navbar navbar-light navbar-expand-sm">
               <div class="container-fluid">
                 <ul class="navbar-nav d-flex d-sm-flex flex-row justify-content-start align-items-center flex-xl-column align-items-xl-start sidebar-list">
-                  <li class="nav-item"><router-link :to="{name: 'about'}" class="router-link-active nav-link" style="text-align: left;">About</router-link></li>
+                  <li class="nav-item"><router-link :to="{name: 'about'}" class="nav-link" style="text-align: left;">About</router-link></li>
                   <li class="nav-item"><router-link :to="{name: 'projects'}" class="nav-link">Projects</router-link></li>
                   <li class="nav-item"><router-link :to="{name: 'blog'}" class="nav-link">Blog</router-link></li>
                   <li class="nav-item"><router-link :to="{name: 'news'}" class="nav-link">News</router-link></li>
@@ -66,5 +66,9 @@ export default {
 </script>
 
 <style scoped>
-
+  nav li:hover,
+  nav li .router-link-active,
+  nav li .router-link-exact-active {
+    color: rgb(241,241,241) !important;
+  }
 </style>

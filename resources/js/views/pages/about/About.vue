@@ -87,9 +87,13 @@
 </template>
 
 <script>
+import NavbarDefault from "../../../components/core/navbars/NavbarDefault";
 
 export default {
-  name: "About"
+  name: "About",
+  components: {
+    NavbarDefault
+  },
 };
 </script>
 
