@@ -75,22 +75,6 @@
         </section>
         <section>
           <div class="container">
-            <h1 style="text-align: center;"><strong>Portfolio</strong><br></h1>
-            <p>Here are some of my featured projects that i worked on in recent years.<br></p>
-
-            <div class="container mx-auto px-4 w-full md:w-3/4 lg:w-3/5 xl:w-1/2 my-20">
-              <h2 class="text-4xl">All Posts</h2>
-              <div v-if="$apollo.loading"></div>
-
-              <div v-else>
-                <ProjectListItem v-for="wp_post in wp_posts" :key="wp_post.ID" :wp_post="wp_post" class="mt-10"></ProjectListItem>
-              </div>
-            </div>
-          </div>
-
-        </section>
-        <section>
-          <div class="container">
             <h1 style="text-align: center;"><strong>Get in touch&nbsp;👋</strong><br></h1>
             <p>I'm happy to talk business or simply give you some free advice. If both sides see value in working together, we’ll move forward. If not, that's okay too. Worst case we both had a nice chat and received some free feedback.<br></p>
           </div>
@@ -103,34 +87,9 @@
 </template>
 
 <script>
-import NavbarDefault from "../../../components/core/navbars/NavbarDefault";
-import ProjectListItem from "../portfolio/ProjectListItem";
-import gql from "graphql-tag";
 
 export default {
-  name: "About",
-  components: {
-    ProjectListItem,
-    NavbarDefault
-  },
-  apollo: {
-    wp_posts: gql`
-    {
-      wp_posts(where: {AND: [
-        { column: POST_TYPE, operator: EQ, value: "jetpack-portfolio" }
-        { column: POST_STATUS, operator: EQ, value: "publish" }
-      ]
-      }) {
-        ID
-        post_title
-        post_excerpt
-        post_content
-        post_date
-        post_author
-      }
-    }
-    `
-  }
+  name: "About"
 };
 </script>
 
