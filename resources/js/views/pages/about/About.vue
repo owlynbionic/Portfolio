@@ -19,7 +19,7 @@
     </div>
     <div class="row g-0" style="margin-top: 1.5rem;">
       <div class="col-md-3 col-lg-3 actor-cont">
-        <div class="d-flex justify-content-center align-items-center mx-auto myprofile"><img class="img-fluid" src="assets/img/xigncode_cat_no_background-cropped-x2.png" alt="bs4_team_01" style="border-radius: 5px;"></div>
+        <div class="d-flex justify-content-center align-items-center mx-auto myprofile"><img class="img-fluid" src="img/appletouchicon.png" alt="bs4_team_01" style="border-radius: 5px;"></div>
         <section>
           <div class="timeline"></div>
           <ul class="timeline">

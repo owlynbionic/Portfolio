@@ -49,7 +49,7 @@
               </div>
             </nav>
           </div>
-          <div class="col-1 col-xl-12 d-flex justify-content-center"><a class="d-flex justify-content-center align-items-center w-100" href="#"><!--<img class="img-fluid w-100" src="assets/img/apple-touch-icon.png" style="width: 40px;max-height: 40px;max-width: 40px;">--></a></div>
+          <div class="col-1 col-xl-12 d-flex justify-content-center"><a class="d-flex justify-content-center align-items-center w-100" href="#"><img class="img-fluid w-100" src="img/appletouchicon.png" style="width: 40px;max-height: 40px;max-width: 40px;"></a></div>
         </div>
       </div>
     </div>
