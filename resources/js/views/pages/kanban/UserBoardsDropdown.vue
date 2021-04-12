@@ -30,9 +30,9 @@
 <script>
 import DropdownMenu from "./DropdownMenu";
 import BoardAddModal from "./BoardAddModal";
-import UserBoards from "../graphql/kanban/UserBoards.gql";
+import UserBoards from "../../../graphql/kanban/UserBoards.gql";
 import { mapState } from "vuex";
-import { colorMap100, colorMap200 } from "./../utils";
+import { colorMap100, colorMap200 } from "../../../utils";
 
 export default {
   components: { DropdownMenu, BoardAddModal },

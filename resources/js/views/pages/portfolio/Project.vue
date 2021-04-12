@@ -54,7 +54,7 @@ export default {
     wp_post: {
       query: gql`
         query($id: ID!) {
-          wp_post(id: $id) {
+          wp_post(ID: $id) {
             ID
             post_title
             post_content

@@ -107,13 +107,18 @@ export default new Router({
       ]
     },
     {
-      path: "/board",
-      component: () => import("./Board"),
+      path: "/boards",
+      component: () => import("./views/pages/kanban/Kanban"),
       children: [
-        { path: "/board", name: "board",
-          component: () => import("./Board")
+        { path: "/boards", name: "boards",
+          component: () => import("./views/pages/kanban/Kanban")
         },
       ]
+    },
+    {
+      path: "/boards/:id",
+      name: 'board',
+      component: () => import("./views/pages/kanban/Board"),
     },
     {
       name: "login",

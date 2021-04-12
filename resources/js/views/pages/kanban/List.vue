@@ -3,7 +3,6 @@
     <div class="flex justify-between">
       <div class="text-gray-800 pl-2 pb-2 font-bold">{{ list.title }}</div>
     </div>
-
     <Card
       v-for="card in list.cards"
       :key="card.id"
@@ -18,7 +17,8 @@
       :list="list"
       @added="$emit('card-added', {...$event, listId: list.id})"
     ></CardAddEditor>
-    <CardAddButton v-if="!editing && canAddCard" @click="editing=true"></CardAddButton>
+<!--    <CardAddButton v-if="!editing && canAddCard" @click="editing=true"></CardAddButton>-->
+    <CardAddButton v-if="!editing" @click="editing=true"></CardAddButton>
   </div>
 </template>
 
@@ -38,11 +38,11 @@ export default {
       editing: false
     };
   },
-  computed: mapState({
-    canAddCard(state) {
-      return this.list.board.owner.id == state.user.id;
-    }
-  })
+  // computed: mapState({
+  //   canAddCard(state) {
+  //     return this.list.board.owner.id === state.user.id;
+  //   }
+  // })
 };
 </script>
 

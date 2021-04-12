@@ -39,19 +39,19 @@
 </template>
 
 <script>
-import List from "./components/List";
-import ListAddEditor from "./components/ListAddEditor";
-import UserBoardsDropdown from "./components/UserBoardsDropdown";
-import BoardQuery from "./graphql/kanban/BoardWithListsAndCards.gql";
-import Logout from "./graphql/auth/Logout.gql";
+import List from "./List";
+import ListAddEditor from "./ListAddEditor";
+import UserBoardsDropdown from "./UserBoardsDropdown";
+import BoardQuery from "../../../graphql/kanban/BoardWithListsAndCards.gql";
+import Logout from "../../../graphql/auth/Logout.gql";
 import {
   EVENT_CARD_ADDED,
   EVENT_CARD_DELETED,
   EVENT_CARD_UPDATED,
   EVENT_LIST_ADDED
-} from "./constants";
+} from "../../../constants";
 import { mapState } from "vuex";
-import { colorMap500 } from "./utils";
+import { colorMap500 } from "../../../utils";
 
 export default {
   components: { List, UserBoardsDropdown, ListAddEditor },
@@ -84,7 +84,7 @@ export default {
       });
 
       if (response.data?.logout?.id) {
-        this.$store.dispatch("logout");
+        await this.$store.dispatch("logout");
       }
     },
     updateQueryCache(event) {
@@ -94,7 +94,7 @@ export default {
       });
 
       const listById = () =>
-        data.board.lists.find(list => list.id == event.listId);
+        data.board.lists.find(list => list.id === event.listId);
 
       switch (event.type) {
         case EVENT_LIST_ADDED:
@@ -104,12 +104,12 @@ export default {
           listById().cards.push(event.data);
           break;
         case EVENT_CARD_UPDATED:
-          listById().cards.filter(card => card.id == event.data.id).title =
+          listById().cards.filter(card => card.id === event.data.id).title =
             event.data.title;
           break;
         case EVENT_CARD_DELETED:
           listById().cards = listById().cards.filter(
-            card => card.id != event.data.id
+            card => card.id !== event.data.id
           );
           break;
       }

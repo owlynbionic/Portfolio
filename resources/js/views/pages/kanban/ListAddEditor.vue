@@ -36,9 +36,9 @@
 
 <script>
 import { directive as onClickaway } from "vue-clickaway";
-import { EVENT_LIST_ADDED } from "../constants";
+import { EVENT_LIST_ADDED } from "../../../constants";
 
-import ListAdd from "../graphql/kanban/ListAdd.gql";
+import ListAdd from "../../../graphql/kanban/ListAdd.gql";
 
 export default {
   props: ["board"],

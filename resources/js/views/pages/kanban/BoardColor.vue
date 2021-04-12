@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import { colorMap500 } from "../utils";
+import { colorMap500 } from "../../../utils";
 
 export default {
   props: {

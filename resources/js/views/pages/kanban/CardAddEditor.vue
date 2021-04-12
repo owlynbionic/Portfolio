@@ -3,8 +3,8 @@
 </template>
 
 <script>
-import CardAdd from "../graphql/kanban/CardAdd.gql";
-import { EVENT_CARD_ADDED } from "../constants";
+import CardAdd from "../../../graphql/kanban/CardAdd.gql";
+import { EVENT_CARD_ADDED } from "../../../constants";
 import CardEditor from "./CardEditor";
 import { mapState } from "vuex";
 
@@ -19,7 +19,9 @@ export default {
     };
   },
   computed: mapState({
-    userId: state => state.user.id
+    // userId: state => state.user.id
+    userId: 1
+
   }),
   methods: {
     addCard() {
@@ -31,7 +33,7 @@ export default {
           title: this.title,
           listId: this.list.id,
           order: this.list.cards.length + 1,
-          ownerId: this.userId
+          ownerId: 1
         },
         update(store, { data: { cardAdd } }) {
           self.$emit("added", { store, data: cardAdd, type: EVENT_CARD_ADDED });

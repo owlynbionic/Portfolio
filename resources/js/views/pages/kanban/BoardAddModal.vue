@@ -37,10 +37,10 @@
 <script>
 import Modal from "./Modal";
 import BoardColor from "./BoardColor";
-import { colorGrid, colorMap500 } from "./../utils";
+import { colorGrid, colorMap500 } from "../../../utils";
 
-import BoardAdd from "../graphql/kanban/BoardAdd.gql";
-import UserBoards from "../graphql/kanban/UserBoards.gql";
+import BoardAdd from "../../../graphql/kanban/BoardAdd.gql";
+import UserBoards from "../../../graphql/kanban/UserBoards.gql";
 
 import { mapState } from "vuex";
 
