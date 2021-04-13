@@ -2,11 +2,12 @@
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use App\Corcel\Models\User as WPUser;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
-class User extends WPUser
+class User extends Authenticatable
 {
     use Notifiable;
 
@@ -16,7 +17,7 @@ class User extends WPUser
      * @var array
      */
     protected $fillable = [
-        'user_login', 'user_email', 'user_pass',
+        'name', 'email', 'password',
     ];
 
     /**
@@ -25,7 +26,7 @@ class User extends WPUser
      * @var array
      */
     protected $hidden = [
-        'user_pass',
+        'password', 'remember_token',
     ];
 
     /**
@@ -34,11 +35,16 @@ class User extends WPUser
      * @var array
      */
     protected $casts = [
-        'user_registered' => 'datetime',
+        'email_verified_at' => 'datetime',
     ];
 
-    public function posts(): HasMany
+    public function boards(): HasMany
     {
-        return $this->hasMany(Post::class, 'post_author');
+        return $this->hasMany(User::class, 'owner_id');
+    }
+
+    public function cards(): HasMany
+    {
+        return $this->hasMany(Card::class, 'owner_id');
     }
 }

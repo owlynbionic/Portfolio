@@ -11,10 +11,9 @@
     },
     "devDependencies": {
         "axios": "^0.21.1",
-        "bootstrap": "^5.0.0-beta2",
+        "bootstrap": "^5.0.0-beta3",
         "bootstrap-vue": "^2.21.2",
         "cross-env": "^7.0.3",
-        "jquery": "^3.2",
         "laravel-mix": "^6.0.13",
         "lodash": "^4.17.21",
         "popper.js": "^1.12",
@@ -23,7 +22,7 @@
         "sass": "^1.20.1",
         "sass-loader": "^8.0.0",
         "vue": "^2.6.12",
-        "vue-loader": "^15.9.5",
+        "vue-loader": "^15.9.6",
         "vue-template-compiler": "^2.6.12"
     },
     "dependencies": {
@@ -60,6 +59,9 @@
         "vue2-perfect-scrollbar": "^1.5.0",
         "vuelidate": "^0.7.6",
         "vuetify": "^2.4.6",
-        "vuex": "^3.6.2"
+        "vuex": "^3.6.2",
+        "apexcharts": "^3.26.0",
+        "vue-clickaway": "^2.2.2",
+        "tailwindcss": "^2.0.4"
     }
 }

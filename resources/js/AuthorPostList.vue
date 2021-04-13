@@ -15,7 +15,7 @@
 
 <script>
 import gql from "graphql-tag";
-import PostListItem from "./components/PostListItem";
+import PostListItem from "./views/pages/blog/PostListItem";
 
 export default {
   components: {
@@ -28,17 +28,17 @@ export default {
           wp_user(id: $id) {
             ID
             display_name
-            wp_posts {
-              ID
-              post_title
-              post_content
-              post_date
-              post_author {
-                ID
-                display_name
-              }
-
-            }
+#            wp_posts {
+#              ID
+#              post_title
+#              post_content
+#              post_date
+#              post_author {
+#                ID
+#                display_name
+#              }
+#
+#            }
           }
         }
       `,
