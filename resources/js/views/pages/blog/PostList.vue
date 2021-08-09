@@ -11,10 +11,10 @@
     </div>
   </div>
 </template>
-<style lang="scss">
+<!--<style lang="scss">-->
 
-  @import "../../../../css/styles.min.css";
-</style>
+<!--  @import "../../../../css/styles.min.css";-->
+<!--</style>-->
 <script>
 import gql from "graphql-tag";
 import PostListItem from "./PostListItem";
