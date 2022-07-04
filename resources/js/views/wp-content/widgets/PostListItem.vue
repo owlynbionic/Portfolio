@@ -21,7 +21,19 @@
 </template>
 
 <script>
+import gql from "graphql-tag";
+
 export default {
+    apollo: {
+        wp_users: gql`
+    {
+      wp_users {
+        ID
+        display_name
+      }
+    }
+    `
+    },
     props: {
         wp_post: Object
     }

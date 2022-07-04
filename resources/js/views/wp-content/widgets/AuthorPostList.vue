@@ -15,7 +15,7 @@
 
 <script>
 import gql from "graphql-tag";
-import PostListItem from "../components/PostListItem";
+import PostListItem from "./PostListItem";
 
 export default {
   components: {

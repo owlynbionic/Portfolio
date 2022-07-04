@@ -1,33 +1,56 @@
 import { createApp } from "vue";
+import moment from 'moment';
 import App from "./App.vue";
 import router from "./router";
-import VueApollo from "vue-apollo";
-import store from "./store";
+
+
+// import VueApollo from "vue-apollo";
+// import store from "./store";
 import './bootstrap';
-import ApolloClient from "apollo-boost";
+// import ApolloClient from "apollo-boost";
+import { ApolloClient, HttpLink, InMemoryCache } from '@apollo/client/core'
+import { createApolloProvider } from '@vue/apollo-option'
 
+
+const httpLink = new HttpLink({
+  // You should use an absolute URL here
+  uri: 'http://localhost:8000/graphql',
+  // credentials: 'include',
+  fetchOptions: {
+    mode: 'no-cors',
+  },
+})
+
+// Create the apollo client
 const apolloClient = new ApolloClient({
-    // You should use an absolute URL here
-    uri: 'http://127.0.0.1:8000/graphql'
-});
+  link: httpLink,
+  cache: new InMemoryCache(),
+  connectToDevTools: true,
+})
 
-const apolloProvider = new VueApollo({
-    defaultClient: apolloClient,
-});
+// Create a provider
+const apolloProvider = createApolloProvider({
+  defaultClient: apolloClient,
+})
 
-createApp(App)
-    .use(store)
-    .use(router)
-    .use(apolloProvider)
-    .mount("#app");
+// const app = createApp(App)
+// app.use(store);
+// app.use(router);
+// app.use(apolloProvider);
+// app.mount("#app");
+
+moment.locale('en');
+
+let app=createApp(App);
+
+app.config.globalProperties.$moment=moment;
+
+app
+  .use(router)
+  .use(apolloProvider)
+  .mount("#app");
 
 
 
-// Vue.filter("timeago", value => moment(value).fromNow());
-// Vue.filter("longDate", value => moment(value).format("MMMM Do YYYY"));
 
-// const app = new Vue({
-//     el: '#app',
-//     apolloProvider,
-//     router
-// });
+

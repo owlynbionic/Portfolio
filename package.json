@@ -25,7 +25,8 @@
         "vue-loader": "^16.1.2"
     },
     "dependencies": {
-        "@apollo/client": "^3.3.11",
+        "@apollo/client": "^3.6.9",
+        "@vue/apollo-option": "^4.0.0-alpha.18",
         "apollo-boost": "^0.4.9",
         "graphql": "^15.5.0",
         "graphql-tag": "^2.11.0",
