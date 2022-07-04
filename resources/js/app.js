@@ -15,10 +15,6 @@ import { createApolloProvider } from '@vue/apollo-option'
 const httpLink = new HttpLink({
   // You should use an absolute URL here
   uri: 'http://localhost:8000/graphql',
-  // credentials: 'include',
-  fetchOptions: {
-    mode: 'no-cors',
-  },
 })
 
 // Create the apollo client
